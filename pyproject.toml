@@ -1,6 +1,6 @@
 [project]
 name = "segment-tree"
-version = "0.1.1"
+version = "0.1.2"
 description = "Answers range queries and applies range updates over an associative operation."
 requires-python = ">=3.10"
 dependencies = []
