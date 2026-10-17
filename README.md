@@ -34,3 +34,10 @@ This library uses a boolean *mark* flag on each lazy node rather than a sentinel
 
 - `Operation` — dataclass with fields `combine`, `apply`, `id_element`.
 - `SegmentTree(data, op)` — methods: `query(left, right)`, `get(index)`, `all()`, `update_point(index, value)`, `update_range(left, right, value)`, and the `length` property.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
